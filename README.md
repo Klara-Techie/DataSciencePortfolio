@@ -7,3 +7,10 @@ A collection of selected data science projects to demonstrate skill sets, knowle
     1. numpy, pandas
     2. matplotlib, seabor
     3. plotly, cufflinks
+
+## Flight_Ticket_Price_Prediction:
+  In this project flight data has ben analysed and ticket price has been predicted <br>
+    Libraries used: <br>
+    1. numpy, pandas <br>
+    2. matplotlib, seaborv <br>
+    3. plotly, cufflinks <br>
