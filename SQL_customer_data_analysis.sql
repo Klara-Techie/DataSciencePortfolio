@@ -1,10 +1,12 @@
 USE sql_store; 
-
+-- Return all the coloms in the customers if customer id is
+-- greater then 5
 select customer_id, first_name, birth_date 
 from customers
 where customer_id > 5
 order by first_name;
 -- ================================================ 
+-- Add a discount colomn in customers
 select 
 	first_name,
     last_name,
@@ -98,7 +100,7 @@ join products p -- order_items o
 	on p.product_id = o.product_id;
 -- =================================================
 use sql_invoicing;
-
+-- Return date, invoice_id, amount, name, pay,ent method
 select 
 	payments.date,
     payments.invoice_id,
@@ -114,7 +116,7 @@ join payment_methods
 
 -- ======================================================================
 use sql_store;
-
+-- Returnproduct_id, name, quantity
 select 
 	p.product_id,
     p.name,
@@ -123,6 +125,7 @@ from order_items oi
 right join products p
 	on p.product_id = oi.product_id;
 -- ======================================================================
+-- Return customer_id, first_name, order_id, shipper
 select c.customer_id, c.first_name, o.order_id, sh.name as shipper
 from customers c
 left join orders o
@@ -130,6 +133,7 @@ left join orders o
 left join shippers sh
 	on sh.shipper_id = o.shipper_id;
 -- ======================================================================
+-- Return order_date, order_id, shipper, status
 select 
 	o.order_date,
     o.order_id,
@@ -148,6 +152,7 @@ left join order_statuses os
 
 order by o.status;
 -- =================================================
+-- Return date, client, amount, pay_method
 use sql_invoicing;
 select 
 	p.date,
@@ -190,62 +195,4 @@ from customers
 where points > 3000
 
 order by first_name;
--- ==================================================================          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+-- ==================================================================   
